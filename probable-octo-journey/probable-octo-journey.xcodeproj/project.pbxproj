@@ -26,6 +26,7 @@
 		B1D072462C45F7A0006C427E /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D072452C45F7A0006C427E /* OrderModel.swift */; };
 		B1D072482C45F7BE006C427E /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D072472C45F7BE006C427E /* OrderViewModel.swift */; };
 		B1D0724A2C45F84B006C427E /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D072492C45F84B006C427E /* OrderView.swift */; };
+		B1D0724C2C461F2E006C427E /* CreateProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D0724B2C461F2E006C427E /* CreateProductView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		B1D072452C45F7A0006C427E /* OrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
 		B1D072472C45F7BE006C427E /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
 		B1D072492C45F84B006C427E /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
+		B1D0724B2C461F2E006C427E /* CreateProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProductView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 			children = (
 				B1D072182C45DE33006C427E /* probable_octo_journeyApp.swift */,
 				B1D0721A2C45DE34006C427E /* ContentView.swift */,
+				B1D0724D2C461F57006C427E /* Image */,
 				B1D0723E2C45F232006C427E /* User */,
 				B1D0722C2C45E1E4006C427E /* Delivery */,
 				B1D0722B2C45E1DC006C427E /* Analytics */,
@@ -119,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				B1D0723C2C45E807006C427E /* ProductView.swift */,
+				B1D0724B2C461F2E006C427E /* CreateProductView.swift */,
 				B1D0723A2C45E7FE006C427E /* ProductViewModel.swift */,
 				B1D072382C45E7F3006C427E /* ProductModel.swift */,
 			);
@@ -154,6 +158,13 @@
 				B1D0723F2C45F243006C427E /* AppUserModel.swift */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		B1D0724D2C461F57006C427E /* Image */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Image;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,6 +256,7 @@
 				B1D072392C45E7F3006C427E /* ProductModel.swift in Sources */,
 				B1D072442C45F25A006C427E /* AppUserView.swift in Sources */,
 				B1D072422C45F24A006C427E /* AppUserViewModel.swift in Sources */,
+				B1D0724C2C461F2E006C427E /* CreateProductView.swift in Sources */,
 				B1D0724A2C45F84B006C427E /* OrderView.swift in Sources */,
 				B1D0723D2C45E807006C427E /* ProductView.swift in Sources */,
 				B1D0723B2C45E7FE006C427E /* ProductViewModel.swift in Sources */,

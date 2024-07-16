@@ -17,4 +17,5 @@ struct AppUser: Codable, Identifiable {
     var email: String = ""
     var position: UserPosition = UserPosition.training
     var avatar: String = ""
+    var loggedIn: Bool = false
 }
