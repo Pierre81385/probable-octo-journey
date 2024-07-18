@@ -27,6 +27,11 @@
 		B1D072482C45F7BE006C427E /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D072472C45F7BE006C427E /* OrderViewModel.swift */; };
 		B1D0724A2C45F84B006C427E /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D072492C45F84B006C427E /* OrderView.swift */; };
 		B1D0724C2C461F2E006C427E /* CreateProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D0724B2C461F2E006C427E /* CreateProductView.swift */; };
+		B1D0724F2C47365A006C427E /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D0724E2C47365A006C427E /* ImagePickerView.swift */; };
+		B1D072512C473671006C427E /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D072502C473671006C427E /* AsyncImage.swift */; };
+		B1D072532C473694006C427E /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D072522C473694006C427E /* ImageLoader.swift */; };
+		B1D072552C473795006C427E /* StoredImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D072542C473794006C427E /* StoredImageViewModel.swift */; };
+		B1D072572C47379F006C427E /* StoredImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D072562C47379F006C427E /* StoredImageModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +52,11 @@
 		B1D072472C45F7BE006C427E /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
 		B1D072492C45F84B006C427E /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
 		B1D0724B2C461F2E006C427E /* CreateProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProductView.swift; sourceTree = "<group>"; };
+		B1D0724E2C47365A006C427E /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
+		B1D072502C473671006C427E /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
+		B1D072522C473694006C427E /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		B1D072542C473794006C427E /* StoredImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredImageViewModel.swift; sourceTree = "<group>"; };
+		B1D072562C47379F006C427E /* StoredImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredImageModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +173,11 @@
 		B1D0724D2C461F57006C427E /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				B1D0724E2C47365A006C427E /* ImagePickerView.swift */,
+				B1D072502C473671006C427E /* AsyncImage.swift */,
+				B1D072522C473694006C427E /* ImageLoader.swift */,
+				B1D072542C473794006C427E /* StoredImageViewModel.swift */,
+				B1D072562C47379F006C427E /* StoredImageModel.swift */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -250,12 +265,17 @@
 				B1D0721B2C45DE34006C427E /* ContentView.swift in Sources */,
 				B1D072482C45F7BE006C427E /* OrderViewModel.swift in Sources */,
 				B1D0721D2C45DE34006C427E /* Item.swift in Sources */,
+				B1D0724F2C47365A006C427E /* ImagePickerView.swift in Sources */,
 				B1D072462C45F7A0006C427E /* OrderModel.swift in Sources */,
 				B1D072192C45DE33006C427E /* probable_octo_journeyApp.swift in Sources */,
+				B1D072532C473694006C427E /* ImageLoader.swift in Sources */,
 				B1D072402C45F243006C427E /* AppUserModel.swift in Sources */,
 				B1D072392C45E7F3006C427E /* ProductModel.swift in Sources */,
 				B1D072442C45F25A006C427E /* AppUserView.swift in Sources */,
+				B1D072552C473795006C427E /* StoredImageViewModel.swift in Sources */,
 				B1D072422C45F24A006C427E /* AppUserViewModel.swift in Sources */,
+				B1D072572C47379F006C427E /* StoredImageModel.swift in Sources */,
+				B1D072512C473671006C427E /* AsyncImage.swift in Sources */,
 				B1D0724C2C461F2E006C427E /* CreateProductView.swift in Sources */,
 				B1D0724A2C45F84B006C427E /* OrderView.swift in Sources */,
 				B1D0723D2C45E807006C427E /* ProductView.swift in Sources */,
@@ -406,7 +426,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.pjb.den.probable-octo-journey";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pjb.den.probably-octo-journey";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -435,7 +455,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.pjb.den.probable-octo-journey";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pjb.den.probably-octo-journey";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

@@ -9,31 +9,60 @@ import SwiftUI
 
 struct CreateProductView: View {
     @State var productVM: ProductViewModel = ProductViewModel()
+    @State var imageVM: StoredImageViewModel = StoredImageViewModel()
+    @State var imageUploaded: Bool = false
+    @State var dismiss: Bool = false
     
     var body: some View {
-        VStack{
-            HStack{
-                CategoryMenu(category: $productVM.product.category).tint(.black)
-                Spacer()
-            }
-            TextField("Product name", text: $productVM.product.name)
-            TextField("Description", text: $productVM.product.description)
-            HStack{
-                Text("Price")
-                TextField("$0.00", value: $productVM.product.price, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
-                    .keyboardType(.decimalPad)
-            }
-            HStack{
-                Text("Inventory")
-                TextField("Amount", value: $productVM.product.inventory, format: .number)
-                    .keyboardType(.decimalPad)
-            }
-            Button(action: {
-                productVM.createProduct()
-            }, label: {
-                Text("Save")
-            })
-        }.padding()
+        ZStack{
+            Color(.pink.opacity(0.1))
+            GroupBox("") {
+                VStack{
+                    HStack{
+                        Spacer()
+                        TextField("", value: $productVM.product.price, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                            .keyboardType(.decimalPad)
+                            .fontWeight(.ultraLight)
+                            .frame(width: 70, height: 50)
+                            .multilineTextAlignment(.trailing)
+                    }
+                    HStack{
+                        Spacer()
+                        CategoryMenu(category: $productVM.product.category).tint(.black)
+                            .fontWeight(.bold)
+                    }
+                    if(imageUploaded){
+                        AsyncAwaitImageView(imageUrl: URL(string: imageVM.imageStore.url)!)
+                    } else {
+                        ImagePickerView(uploader: $imageVM).frame(width: 350, height: 350).onChange(of: imageVM.imageStore.url) {
+                            productVM.product.image = imageVM.imageStore.url
+                            imageUploaded = true
+                        }
+                    }
+                    TextField("Product name", text: $productVM.product.name).fontWeight(.bold)
+                    TextField("Description", text: $productVM.product.description).fontWeight(.ultraLight)
+                    Button(action: {
+                        dismiss = productVM.createProduct()
+                    }, label: {
+                        Text("Save").tint(.black)
+                    })
+                }.padding()
+            }.groupBoxStyle(CardGroupBoxStyleTop())
+        }.ignoresSafeArea()
+            
+    }
+}
+
+struct CardGroupBoxStyleTop: GroupBoxStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        VStack(alignment: .leading) {
+            configuration.label
+            configuration.content
+        }
+        .padding()
+        .background(Color.white)
+        .clipShape(.rect(topLeadingRadius: 175, bottomLeadingRadius: 0, bottomTrailingRadius: 175, topTrailingRadius: 0))
+        .shadow(color: .gray.opacity(0.6), radius: 15, x: 5, y: 5)
     }
 }
 
