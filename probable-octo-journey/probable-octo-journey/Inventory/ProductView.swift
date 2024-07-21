@@ -9,8 +9,39 @@ import Foundation
 import SwiftUI
 
 struct ProductView: View {
+    @State var productVM: ProductViewModel = ProductViewModel()
+    let rows = [
+        GridItem(.flexible()),
+       ]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack{
+            Color(.pink.opacity(0.1))
+                if(productVM.products.isEmpty) {
+                    Text("loading.")
+                } else {
+                    VStack{
+                        Spacer()
+                        Text("All Products")
+                        ScrollView(.horizontal) {
+                            HStack{
+                                ForEach(productVM.products) {
+                                    prod in
+                                    
+                                    AsyncAwaitMenuImageView(imageUrl: URL(string: prod.image)!)
+                                    
+                                }
+                            }
+                        }
+                        Spacer()
+                    }.padding()
+                }
+        }.ignoresSafeArea()
+            .onAppear{
+                Task{
+                    await productVM.getProducts()
+                }
+            }
     }
 }
 

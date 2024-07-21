@@ -32,6 +32,8 @@
 		B1D072532C473694006C427E /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D072522C473694006C427E /* ImageLoader.swift */; };
 		B1D072552C473795006C427E /* StoredImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D072542C473794006C427E /* StoredImageViewModel.swift */; };
 		B1D072572C47379F006C427E /* StoredImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D072562C47379F006C427E /* StoredImageModel.swift */; };
+		B1D072592C4A2D82006C427E /* ProductListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D072582C4A2D82006C427E /* ProductListView.swift */; };
+		B1D0725B2C4A2DA6006C427E /* ProductCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D0725A2C4A2DA6006C427E /* ProductCarouselView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +59,8 @@
 		B1D072522C473694006C427E /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		B1D072542C473794006C427E /* StoredImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredImageViewModel.swift; sourceTree = "<group>"; };
 		B1D072562C47379F006C427E /* StoredImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredImageModel.swift; sourceTree = "<group>"; };
+		B1D072582C4A2D82006C427E /* ProductListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListView.swift; sourceTree = "<group>"; };
+		B1D0725A2C4A2DA6006C427E /* ProductCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCarouselView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +136,8 @@
 			isa = PBXGroup;
 			children = (
 				B1D0723C2C45E807006C427E /* ProductView.swift */,
+				B1D072582C4A2D82006C427E /* ProductListView.swift */,
+				B1D0725A2C4A2DA6006C427E /* ProductCarouselView.swift */,
 				B1D0724B2C461F2E006C427E /* CreateProductView.swift */,
 				B1D0723A2C45E7FE006C427E /* ProductViewModel.swift */,
 				B1D072382C45E7F3006C427E /* ProductModel.swift */,
@@ -272,10 +278,12 @@
 				B1D072402C45F243006C427E /* AppUserModel.swift in Sources */,
 				B1D072392C45E7F3006C427E /* ProductModel.swift in Sources */,
 				B1D072442C45F25A006C427E /* AppUserView.swift in Sources */,
+				B1D0725B2C4A2DA6006C427E /* ProductCarouselView.swift in Sources */,
 				B1D072552C473795006C427E /* StoredImageViewModel.swift in Sources */,
 				B1D072422C45F24A006C427E /* AppUserViewModel.swift in Sources */,
 				B1D072572C47379F006C427E /* StoredImageModel.swift in Sources */,
 				B1D072512C473671006C427E /* AsyncImage.swift in Sources */,
+				B1D072592C4A2D82006C427E /* ProductListView.swift in Sources */,
 				B1D0724C2C461F2E006C427E /* CreateProductView.swift in Sources */,
 				B1D0724A2C45F84B006C427E /* OrderView.swift in Sources */,
 				B1D0723D2C45E807006C427E /* ProductView.swift in Sources */,
