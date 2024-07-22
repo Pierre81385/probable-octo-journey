@@ -37,7 +37,7 @@ struct probable_octo_journeyApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ProductCarouselView()
+            MenuView()
         }
         .modelContainer(sharedModelContainer)
     }

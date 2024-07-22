@@ -8,10 +8,6 @@
 import Foundation
 import FirebaseFirestore
 
-enum ProductCategory: String, Codable {
-    case misc = "Miscellaneous", app = "Appetizer", main = "Main Dish", side = "Side Dish", dessert = "Dessert", beer = "Beer", wine = "Wine", spirit = "Spirits", cocktail = "Cocktails", na = "Non-Alcoholic", none
-}
-
 struct Product: Codable, Identifiable {
     @DocumentID var id: String?
     var name: String = ""
@@ -22,6 +18,6 @@ struct Product: Codable, Identifiable {
     var sold: Int = 0
     var image: String = ""
     var notes: String = ""
-    var category: ProductCategory = ProductCategory.none
+    var category: String = "none"
 }
 

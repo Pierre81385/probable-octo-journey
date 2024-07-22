@@ -9,43 +9,53 @@ import Foundation
 import SwiftUI
 
 struct ProductView: View {
-    @State var productVM: ProductViewModel = ProductViewModel()
-    let rows = [
-        GridItem(.flexible()),
-       ]
+    var prod: Product?
     
     var body: some View {
         ZStack{
-            Color(.pink.opacity(0.1))
-                if(productVM.products.isEmpty) {
-                    Text("loading.")
-                } else {
+            VStack{
+                GeometryReader { geometry in
+                    HStack(spacing: 0) {
+                        AsyncAwaitImageView(imageUrl: URL(string: prod!.image)!).frame(width: geometry.size.width, height: geometry.size.height)
+                    }
+                    .frame(width: geometry.size.width, height: geometry.size.height, alignment: .leading)
+                }
+                HStack{
+                    Spacer()
+                    Button(action: {}, label: {
+                        Image(systemName: "minus.circle").tint(.black)
+                    }).padding()
+                    Spacer()
+                    Button(action: {}, label: {
+                        Image(systemName: "plus.circle").tint(.black)
+                    }).padding()
+                    Spacer()
+                }.padding(/*@START_MENU_TOKEN@*/EdgeInsets()/*@END_MENU_TOKEN@*/)
+                GroupBox(label: Text(""), content: {
                     VStack{
-                        Spacer()
-                        Text("All Products")
-                        ScrollView(.horizontal) {
-                            HStack{
-                                ForEach(productVM.products) {
-                                    prod in
-                                    
-                                    AsyncAwaitMenuImageView(imageUrl: URL(string: prod.image)!)
-                                    
-                                }
+                        HStack{
+                            VStack{
+                                Text("subtotal").fontWeight(.light)
+                                Text("with tax").fontWeight(.light)
+                                Text("GRAND TOTAL").fontWeight(.bold)
+                            }
+                            Spacer()
+                            VStack{
+                                Text("$0.00").fontWeight(.light)
+                                Text("$0.00").fontWeight(.light)
+                                Text("$0.00").fontWeight(.bold)
                             }
                         }
-                        Spacer()
-                    }.padding()
-                }
-        }.ignoresSafeArea()
-            .onAppear{
-                Task{
-                    await productVM.getProducts()
-                }
+                    }
+                })
             }
+        }.onAppear{
+            
+        }
     }
 }
 
-#Preview {
-    ProductView()
-}
+//#Preview {
+//    ProductView()
+//}
 

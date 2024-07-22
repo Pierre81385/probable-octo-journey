@@ -16,7 +16,7 @@ struct ProductCarouselView: View {
     var body: some View {
         VStack{
             if(gotProducts) {
-                Text("Featured Specials").fontWeight(.ultraLight).padding()
+                Text("Featured Specials").fontWeight(.bold).padding()
                 CarouselView(products: productVM.products, currentIndex: $currentIndex)
                     .frame(height: 300)
                                     .onReceive(timer) { _ in
@@ -29,8 +29,13 @@ struct ProductCarouselView: View {
                 ProgressView()
             }
         }.onAppear{
-            Task{
-                gotProducts = await productVM.getProducts()
+            if(productVM.products.isEmpty){
+                Task{
+                    gotProducts = await productVM.getProducts()
+                    if(productVM.products.isEmpty){
+                        gotProducts = false
+                    }
+                }
             }
         }
     }

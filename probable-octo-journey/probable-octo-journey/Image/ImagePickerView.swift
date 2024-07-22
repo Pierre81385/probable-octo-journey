@@ -39,7 +39,7 @@ struct ImagePickerView: View {
                     ) {
                         Image(systemName: "camera.circle")
                             .resizable()
-                            .foregroundStyle(.black)
+                            .foregroundStyle(.white)
                             .frame(width: 50, height: 50)
                     }.onChange(of: selectedImage ?? PhotosPickerItem(itemIdentifier: ""), { oldValue, newValue in
                         Task {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B1733F7B2C4E0A2A0057B639 /* Neumorphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1733F7A2C4E0A2A0057B639 /* Neumorphic.swift */; };
 		B1D072192C45DE33006C427E /* probable_octo_journeyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D072182C45DE33006C427E /* probable_octo_journeyApp.swift */; };
 		B1D0721B2C45DE34006C427E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D0721A2C45DE34006C427E /* ContentView.swift */; };
 		B1D0721D2C45DE34006C427E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D0721C2C45DE34006C427E /* Item.swift */; };
@@ -34,9 +35,12 @@
 		B1D072572C47379F006C427E /* StoredImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D072562C47379F006C427E /* StoredImageModel.swift */; };
 		B1D072592C4A2D82006C427E /* ProductListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D072582C4A2D82006C427E /* ProductListView.swift */; };
 		B1D0725B2C4A2DA6006C427E /* ProductCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D0725A2C4A2DA6006C427E /* ProductCarouselView.swift */; };
+		B1D0725D2C4CB690006C427E /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D0725C2C4CB690006C427E /* MenuView.swift */; };
+		B1D0725F2C4D54B0006C427E /* CategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D0725E2C4D54B0006C427E /* CategoryListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B1733F7A2C4E0A2A0057B639 /* Neumorphic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Neumorphic.swift; sourceTree = "<group>"; };
 		B1D072152C45DE33006C427E /* probable-octo-journey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "probable-octo-journey.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1D072182C45DE33006C427E /* probable_octo_journeyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = probable_octo_journeyApp.swift; sourceTree = "<group>"; };
 		B1D0721A2C45DE34006C427E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -61,6 +65,8 @@
 		B1D072562C47379F006C427E /* StoredImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredImageModel.swift; sourceTree = "<group>"; };
 		B1D072582C4A2D82006C427E /* ProductListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListView.swift; sourceTree = "<group>"; };
 		B1D0725A2C4A2DA6006C427E /* ProductCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCarouselView.swift; sourceTree = "<group>"; };
+		B1D0725C2C4CB690006C427E /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		B1D0725E2C4D54B0006C427E /* CategoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +84,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B1733F792C4E0A1A0057B639 /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				B1733F7A2C4E0A2A0057B639 /* Neumorphic.swift */,
+			);
+			path = Style;
+			sourceTree = "<group>";
+		};
 		B1D0720C2C45DE33006C427E = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +114,7 @@
 			children = (
 				B1D072182C45DE33006C427E /* probable_octo_journeyApp.swift */,
 				B1D0721A2C45DE34006C427E /* ContentView.swift */,
+				B1733F792C4E0A1A0057B639 /* Style */,
 				B1D0724D2C461F57006C427E /* Image */,
 				B1D0723E2C45F232006C427E /* User */,
 				B1D0722C2C45E1E4006C427E /* Delivery */,
@@ -136,7 +151,9 @@
 			isa = PBXGroup;
 			children = (
 				B1D0723C2C45E807006C427E /* ProductView.swift */,
+				B1D0725C2C4CB690006C427E /* MenuView.swift */,
 				B1D072582C4A2D82006C427E /* ProductListView.swift */,
+				B1D0725E2C4D54B0006C427E /* CategoryListView.swift */,
 				B1D0725A2C4A2DA6006C427E /* ProductCarouselView.swift */,
 				B1D0724B2C461F2E006C427E /* CreateProductView.swift */,
 				B1D0723A2C45E7FE006C427E /* ProductViewModel.swift */,
@@ -270,11 +287,13 @@
 			files = (
 				B1D0721B2C45DE34006C427E /* ContentView.swift in Sources */,
 				B1D072482C45F7BE006C427E /* OrderViewModel.swift in Sources */,
+				B1D0725F2C4D54B0006C427E /* CategoryListView.swift in Sources */,
 				B1D0721D2C45DE34006C427E /* Item.swift in Sources */,
 				B1D0724F2C47365A006C427E /* ImagePickerView.swift in Sources */,
 				B1D072462C45F7A0006C427E /* OrderModel.swift in Sources */,
 				B1D072192C45DE33006C427E /* probable_octo_journeyApp.swift in Sources */,
 				B1D072532C473694006C427E /* ImageLoader.swift in Sources */,
+				B1D0725D2C4CB690006C427E /* MenuView.swift in Sources */,
 				B1D072402C45F243006C427E /* AppUserModel.swift in Sources */,
 				B1D072392C45E7F3006C427E /* ProductModel.swift in Sources */,
 				B1D072442C45F25A006C427E /* AppUserView.swift in Sources */,
@@ -285,6 +304,7 @@
 				B1D072512C473671006C427E /* AsyncImage.swift in Sources */,
 				B1D072592C4A2D82006C427E /* ProductListView.swift in Sources */,
 				B1D0724C2C461F2E006C427E /* CreateProductView.swift in Sources */,
+				B1733F7B2C4E0A2A0057B639 /* Neumorphic.swift in Sources */,
 				B1D0724A2C45F84B006C427E /* OrderView.swift in Sources */,
 				B1D0723D2C45E807006C427E /* ProductView.swift in Sources */,
 				B1D0723B2C45E7FE006C427E /* ProductViewModel.swift in Sources */,
