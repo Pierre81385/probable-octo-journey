@@ -17,11 +17,6 @@ struct CreateProductView: View {
     
     var body: some View {
         VStack{
-            Button(action: {
-                show = false
-            }, label: {
-                Image(systemName: "chevron.down").foregroundStyle(.black)
-            }).padding()
             ZStack{
                 Color(.white)
                 GroupBox("") {
@@ -48,19 +43,31 @@ struct CreateProductView: View {
                                 imageUploaded = true
                             }
                         }
+                        Toggle(isOn: $productVM.product.sale, label: {
+                            Text("Sale Item").foregroundStyle(.white)
+                        }).tint(.red)
                         TextField("Product name", text: $productVM.product.name).fontWeight(.bold).foregroundStyle(.white)
                         TextField("Description", text: $productVM.product.description).fontWeight(.ultraLight).foregroundStyle(.white)
-                        Button(action: {
-                            dismiss = productVM.createProduct()
-                            if(dismiss) {
+                        HStack{
+                            Button(action: {
                                 show = false
-                            }
-                        }, label: {
-                            Text("Save").foregroundStyle(.white)
-                        })
+                            }, label: {
+                                Image(systemName: "chevron.left").foregroundStyle(.white)
+                            }).padding()
+                            Button(action: {
+                                dismiss = productVM.createProduct()
+                            }, label: {
+                                Text("Save").foregroundStyle(.white)
+                            }).navigationDestination(isPresented: $dismiss, destination: {
+                                MenuView().navigationBarBackButtonHidden(true)
+                            })
+                        }
                     }.padding()
                 }.groupBoxStyle(CardGroupBoxStyleTop())
             }.ignoresSafeArea()
+        }.onAppear{
+            productVM.product = Product()
+            imageUploaded = false
         }
     }
 }

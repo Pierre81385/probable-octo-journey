@@ -20,34 +20,6 @@ struct ProductView: View {
                     }
                     .frame(width: geometry.size.width, height: geometry.size.height, alignment: .leading)
                 }
-                HStack{
-                    Spacer()
-                    Button(action: {}, label: {
-                        Image(systemName: "minus.circle").tint(.black)
-                    }).padding()
-                    Spacer()
-                    Button(action: {}, label: {
-                        Image(systemName: "plus.circle").tint(.black)
-                    }).padding()
-                    Spacer()
-                }.padding(/*@START_MENU_TOKEN@*/EdgeInsets()/*@END_MENU_TOKEN@*/)
-                GroupBox(label: Text(""), content: {
-                    VStack{
-                        HStack{
-                            VStack{
-                                Text("subtotal").fontWeight(.light)
-                                Text("with tax").fontWeight(.light)
-                                Text("GRAND TOTAL").fontWeight(.bold)
-                            }
-                            Spacer()
-                            VStack{
-                                Text("$0.00").fontWeight(.light)
-                                Text("$0.00").fontWeight(.light)
-                                Text("$0.00").fontWeight(.bold)
-                            }
-                        }
-                    }
-                })
             }
         }.onAppear{
             

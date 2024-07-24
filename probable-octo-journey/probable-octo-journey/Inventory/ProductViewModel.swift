@@ -12,6 +12,7 @@ import FirebaseFirestore
 @Observable class ProductViewModel {
     var product: Product = Product()
     var products: [Product] = []
+    var featured: [Product] = []
     let db = Firestore.firestore()
     
     //CRUD
@@ -44,6 +45,20 @@ import FirebaseFirestore
             let querySnapshot = try await ref.getDocuments()
               for document in querySnapshot.documents {
                   try self.products.append(document.data(as: Product.self))
+              }
+            return true
+        } catch {
+          print("Error: \(error)")
+            return false
+        }
+    }
+    
+    func getFeaturedProducts() async -> Bool {
+        let ref = db.collection("products").whereField("sale", isEqualTo: true)
+        do {
+            let querySnapshot = try await ref.getDocuments()
+              for document in querySnapshot.documents {
+                  try self.featured.append(document.data(as: Product.self))
               }
             return true
         } catch {

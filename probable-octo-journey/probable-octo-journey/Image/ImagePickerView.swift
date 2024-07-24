@@ -56,12 +56,12 @@ struct ImagePickerView: View {
                                             HStack {
                                                 Button(action: {
                                                     selectToggle = true
-                                                }, label: { Text("Cancel")}).tint(.black)
+                                                }, label: { Text("Cancel")}).tint(.white)
                                                 Button(action: {
                                                     let uiImage = UIImage(data: selectedImageData!)
                                                     uploader.uploadImage(uiImage: uiImage!)
                                                 }, label: {
-                                                    Text("Save").tint(.black)
+                                                    Text("Save").tint(.white)
                                                 })
                                             }
                                         }

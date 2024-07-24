@@ -10,14 +10,12 @@ import FirebaseFirestore
 
 struct Product: Codable, Identifiable {
     @DocumentID var id: String?
+    var category: String = "none"
+    var image: String = ""
     var name: String = ""
     var description: String = ""
+    var size: [String] = ["xs", "s", "m", "l", "xl", "xxl",]
+    var sale: Bool = false
     var price: Double = 0.0
-    var quantity: Int = 0
-    var inventory: Int = 0
-    var sold: Int = 0
-    var image: String = ""
-    var notes: String = ""
-    var category: String = "none"
 }
 

@@ -8,42 +8,34 @@
 import SwiftUI
 
 struct ProductCarouselView: View {
-    @State var productVM: ProductViewModel = ProductViewModel()
     @State private var currentIndex = 0
-    @State private var gotProducts: Bool = false
+    @Binding var allProducts: [Product]
     private let timer = Timer.publish(every: 5, on: .main, in: .common).autoconnect()
 
     var body: some View {
-        VStack{
-            if(gotProducts) {
-                Text("Featured Specials").fontWeight(.bold).padding()
-                CarouselView(products: productVM.products, currentIndex: $currentIndex)
+        if(allProducts.isEmpty){
+            Text("NO PRODUCTS").foregroundStyle(.white)
+        } else {
+            VStack{
+                Text("Featured Sale Items").fontWeight(.ultraLight).foregroundStyle(.white).padding()
+                CarouselView(products: allProducts, currentIndex: $currentIndex)
                     .frame(height: 300)
-                                    .onReceive(timer) { _ in
-                                        withAnimation {
-                                            currentIndex = (currentIndex + 1) % productVM.products.count
-                                        }
-                                    }
-                PageIndicator(numberOfPages: productVM.products.count, currentIndex: $currentIndex)
-            } else {
-                ProgressView()
-            }
-        }.onAppear{
-            if(productVM.products.isEmpty){
-                Task{
-                    gotProducts = await productVM.getProducts()
-                    if(productVM.products.isEmpty){
-                        gotProducts = false
+                    .onReceive(timer) { _ in
+                        withAnimation {
+                            currentIndex = (currentIndex + 1) % allProducts.count
+                        }
                     }
-                }
+                PageIndicator(numberOfPages: allProducts.count, currentIndex: $currentIndex)
+            }.onAppear{
+                
             }
         }
     }
 }
 
-#Preview {
-    ProductCarouselView()
-}
+//#Preview {
+//    ProductCarouselView()
+//}
 
 struct CarouselView: View {
     let products: [Product]
@@ -53,7 +45,8 @@ struct CarouselView: View {
         GeometryReader { geometry in
             HStack(spacing: 0) {
                 ForEach(products) { prod in
-                    AsyncAwaitImageView(imageUrl: URL(string: prod.image)!).frame(width: geometry.size.width, height: geometry.size.height)
+                        AsyncAwaitImageView(imageUrl: URL(string: prod.image)!).frame(width: geometry.size.width, height: geometry.size.height).onAppear{
+                    }
                 }
             }
             .frame(width: geometry.size.width * CGFloat(products.count), height: geometry.size.height, alignment: .leading)
@@ -71,7 +64,7 @@ struct PageIndicator: View {
         HStack(spacing: 8) {
             ForEach(0..<numberOfPages, id: \.self) { index in
                 Circle()
-                    .fill(index == (currentIndex % numberOfPages) ? Color.black : Color.gray)
+                    .fill(index == (currentIndex % numberOfPages) ? Color.white : Color.gray)
                     .frame(width: 8, height: 8)
             }
         }

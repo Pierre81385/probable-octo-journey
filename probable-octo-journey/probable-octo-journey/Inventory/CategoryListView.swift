@@ -20,11 +20,11 @@ struct CategoryListView: View {
                         Button(action: {
                             self.selected = cat
                         }, label: {
-                            Text(cat).foregroundStyle(selected == cat ? .white : .black).fontWeight(.ultraLight)
+                            Text(cat).foregroundStyle(selected == cat ? .white : .black).fontWeight(.light)
                         })
                         .padding()
                         .background(cat == selected ? .black : .white).clipShape(.rect(topLeadingRadius: 10, bottomLeadingRadius: 10, bottomTrailingRadius: 10, topTrailingRadius: 10))
-                        .foregroundColor(.gray)
+                        .foregroundColor(.white)
                         .background(
                             RoundedRectangle(
                                 cornerRadius: 10,
